@@ -21,7 +21,7 @@ int perm_comb (int m, int n)
     else
     {
         
-        int m_sum = 1, n_sum = 1, minus_sum = 1;
+        int m_sum (1), n_sum (1), minus_sum (1);
         for (int i = 1; i <= m; ++i)
             m_sum *= i;
         
@@ -54,4 +54,5 @@ int main(int argc, const char * argv[]) {
         std::cout << std::endl;
     }
     return 0;
+
 }
