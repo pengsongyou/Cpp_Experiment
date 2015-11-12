@@ -68,4 +68,3 @@ int** Pascal(int** tab, int x)
         }
     return tab;
 }
-

@@ -40,26 +40,26 @@ int main(int argc, const char * argv[]) {
     
     /********* 2.7 Bidimensional Array ****************************/
     
-    int x;
-    std::cout << "Please input an integer: ";
-    std::cin >> x;
-    int tab1[x][x];
-    int **tab2;
-    tab2 = new int* [x];
-    for (int i = 0; i < x; ++i)
-    {
-        *(tab2 + i) = new int [x];
-    }
-    tab2 = Pascal(tab2, x);
+//    int x;
+//    std::cout << "Please input an integer: ";
+//    std::cin >> x;
+//    int tab1[x][x];
+//    int **tab2;
+//    tab2 = new int* [x];
+//    for (int i = 0; i < x; ++i)
+//    {
+//        *(tab2 + i) = new int [x];
+//    }
+//    tab2 = Pascal(tab2, x);
+//    
+//    for (int i = 0; i < x; ++i)
+//    {
+//        for (int j = 0; j < x; ++j)
+//            std::cout << *(*(tab2 + i) + j) << " ";
+//        std::cout << std:: endl;
+//    }
+//    delete tab2;
     
-    for (int i = 0; i < x; ++i)
-    {
-        for (int j = 0; j < x; ++j)
-            std::cout << *(*(tab2 + i) + j) << " ";
-        std::cout << std:: endl;
-    }
-    
-    delete tab2;
     //std::cout << sizeof(tab1) <<std::endl;
     return 0;
 }

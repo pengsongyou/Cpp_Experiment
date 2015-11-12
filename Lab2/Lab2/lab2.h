@@ -19,3 +19,4 @@ void swap3(int* , int*);
 double* CartesianToPolar(double , double );
 bool IsMultipleOf (int , int = 2);
 int** Pascal(int** , int);
+void test1(int [], int);
