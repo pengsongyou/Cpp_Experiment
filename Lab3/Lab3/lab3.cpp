@@ -45,7 +45,7 @@ int** CreateMatrix(int n, int m)
     int **a;
     a = new int* [n];
     for(int i = 0; i < n; ++i)
-        *(a + i) = new int [m];
+        a[i] = new int [m]();//!!! Initialize all the value to 0
     return a;
 }
 
