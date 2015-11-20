@@ -16,15 +16,14 @@ class Polygon
 {
 private:
     int num;
-    
+    Point2D *first;
 public:
     Polygon();
     Polygon(int);
-    int GetNumber();
-    Point2D* BuildPolygon(Point2D*);
-    void PrevNext(Point2D*);
+    void BuildPolygon();
+    void displayPolygon();
     Point2D* GetElement(Point2D*, int);
-    void InsertAt(Point2D*, Point2D* , Point2D*, int);
+    //void InsertAt(Point2D*, Point2D* , Point2D*, int);
 };
 
 

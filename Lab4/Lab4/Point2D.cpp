@@ -14,16 +14,39 @@ void Point2D::setPoints(float a, float b)
     this->y = b;
 }
 
-Point2D::Point2D():x(0.),y(0.){}
+Point2D::Point2D():
+x(0.),
+y(0.)
+{
+}
 
 Point2D::Point2D(float a, float b):x(a),y(b){}
 
-void Point2D::displayPoint(Point2D* point)
+void Point2D::displayPoint()
 {
-    std::cout << "(" << point -> x << ", " << point -> y << ")" << std::endl;
+    std::cout << "(" << x << ", " << y << ")" << std::endl;
 }
 
 void Point2D::displayAddress(Point2D* point)
 {
     std::cout << point << std::endl;
+}
+
+void Point2D::setPrev(Point2D *point)
+{
+    prev = point;
+}
+void Point2D::setNext(Point2D *point)
+{
+    next = point;
+}
+
+Point2D* Point2D::getPrev()
+{
+    return prev;
+}
+
+Point2D* Point2D::getNext()
+{
+    return next;
 }

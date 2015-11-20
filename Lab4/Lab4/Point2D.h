@@ -15,12 +15,19 @@ class Point2D
 private:
     float x;
     float y;
+    
+    Point2D *prev;
+    Point2D *next;
 public:
     Point2D();
     Point2D(float, float);
-    void displayPoint(Point2D*);
+    void displayPoint();
     void displayAddress(Point2D*);
     void setPoints(float, float);
+    void setPrev(Point2D *);
+    void setNext(Point2D *);
+    Point2D* getPrev();
+    Point2D* getNext();
 };
 #endif /* Point2D_h */
 
