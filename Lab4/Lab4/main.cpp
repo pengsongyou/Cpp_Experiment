@@ -23,37 +23,42 @@ int main(int argc, const char * argv[]) {
     poly -> BuildPolygon();
     poly -> displayPolygon();
 
-    //poly -> BuildPolygon(poly);
 
     
-//    /********Insert or Delete now*************/
-//    while (1)
-//    {
-//        std::cout <<"What do you want now? (i = insert, d = delete, e = exit)";
-//        char input;
-//        std::cin >> input;
-//        if (input == 'i')
-//        {
-//            Point2D *in, *new_array;
-//            int x , y, position;
-//            std:: cout << "x = ";
-//            std::cin >> x;
-//            std:: cout << "y = ";
-//            std::cin >> y;
-//            std::cout << "What position? (Between 0 - " << start -> GetNumber() << ")";
-//            std::cin >> position;
-//            in -> setPoints(x, y);
-//            in = NULL;
-//            
-//            new_array = new Point2D[start -> GetNumber() + 1];
-//            //start -> InsertAt(new_array, p, in, position);
-//            
-//            
-//        }
-//        if (input == 'e')
-//            break;
-//            
-//    }
+    /********Insert or Delete now*************/
+    while (1)
+    {
+        std::cout <<"What do you want now? (i = insert an element, d = delete an element, e = exit)";
+        char input;
+        std::cin >> input;
+        if (input == 'i')
+        {
+            Point2D *in;
+            in = new Point2D;
+            float x , y, position;
+            std:: cout << "x = ";
+            std::cin >> x;
+            std:: cout << "y = ";
+            std::cin >> y;
+            std::cout << "What position? (Between 0 - " << poly -> getNum() - 1 << ")";
+            std::cin >> position;
+            in -> setPoints(x, y);
+            poly -> InsertAt(in, position);
+            poly -> displayPolygon();
+            
+        }
+        if (input == 'd')
+        {
+            int position;
+            std::cout << "Which one do you want to delete? (Between 0 - " << poly -> getNum() - 1 << ")";
+            std::cin >> position;
+            poly -> DeleteAt(position);
+            poly -> displayPolygon();
+        }
+        if (input == 'e')
+            break;
+            
+    }
     
     //p -> displayPoint(start -> GetElement(p, 2));
     

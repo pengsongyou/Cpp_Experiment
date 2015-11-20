@@ -22,8 +22,9 @@ public:
     Polygon(int);
     void BuildPolygon();
     void displayPolygon();
-    Point2D* GetElement(Point2D*, int);
-    //void InsertAt(Point2D*, Point2D* , Point2D*, int);
+    int getNum();
+    void InsertAt(Point2D*, int);
+    void DeleteAt(int);
 };
 
 

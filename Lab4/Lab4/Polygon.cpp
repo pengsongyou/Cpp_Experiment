@@ -16,7 +16,7 @@ void Polygon::BuildPolygon()
     std::cout << "Please input the number of points: ";
     std::cin >> num;
     
-    if (num <= 2)
+    while(num <= 2)
     {
         std::cout << "Cannot build a polygon! Please input again" << std::endl;
         std::cout << "Please input the number of points: ";
@@ -73,11 +73,68 @@ void Polygon::displayPolygon()
     }
 }
 
-
-
-Point2D* Polygon::GetElement(Point2D* p, int n)
+void Polygon::InsertAt(Point2D* point, int n)
 {
-    return (p + n);
+    
+    Point2D *current = this -> first;
+    if (n == 0)
+    {
+        Point2D *tmp;
+        tmp = current;
+        tmp = tmp -> getPrev();
+        current -> setPrev(point);
+        point -> setNext(current);
+        tmp -> setNext(point);
+        point -> setPrev(tmp);
+        (this -> first) = point;
+        
+    }
+    else
+    {
+        for (int i = 0; i < n; ++i)
+        {
+            current = current -> getNext();
+        }
+        Point2D *tmp;
+        tmp = current -> getPrev();
+        tmp ->setNext(point);
+        current -> setPrev(point);
+        point -> setPrev(tmp);
+        point -> setNext(current);
+    }
+    ++num;//When inserting one element, total number of elements increases one.
+}
+
+void Polygon::DeleteAt(int n)
+{
+    if (n == 0)
+    {
+        Point2D *last = this -> first -> getPrev();
+        Point2D *future = this -> first -> getNext();
+        last -> setNext(future);
+        future -> setPrev(last);
+        this -> first = future;
+    }
+    else
+    {
+        Point2D *current = this -> first;
+        for (int i = 0; i < n - 1; ++i)
+        {
+            current = current -> getNext();
+        }
+    
+        Point2D *future;
+        future = current -> getNext() ->getNext();
+        current -> setNext(future);
+        future -> setPrev(current);
+    }
+    
+    --num;
+}
+
+int Polygon::getNum()
+{
+    return num;
 }
 
 //void Polygon::InsertAt(Point2D* new_arr, Point2D* points, Point2D* new_point, int pos)
