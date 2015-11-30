@@ -136,12 +136,3 @@ int Polygon::getNum()
 {
     return num;
 }
-
-//void Polygon::InsertAt(Point2D* new_arr, Point2D* points, Point2D* new_point, int pos)
-//{
-//    for (int i = 0; i < num + 1; ++i)
-//    {
-//        if (i == pos) *(new_arr + i) = *new_point;
-//        else *(new_arr + i) =
-//    }
-//}
